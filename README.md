@@ -1,6 +1,6 @@
 # PHP-with-GET
 
-**Step 1: Create Data Entry Form (`index.php`)**
+## Step 1: Create Data Entry Form (`index.php`)
 
 This step involves creating a form that allows users to input temperature and humidity data.
 
@@ -83,14 +83,18 @@ This step involves creating a form that allows users to input temperature and hu
 </html>
 ```
 - The HTML structure includes necessary meta tags and stylesheet links for styling and responsiveness.
-- Inside the form are input fields for temperature and humidity, each represented by an input element with appropriate attributes like type, id, name, and placeholder.
+- Inside the form are input fields for temperature and humidity, each represented by an input element with appropriate attributes like `type`, `id`, `name`, and `placeholder`.
 - A "Submit" button is included at the end of the form to trigger the data submission.
+
+  
 
 ![1](https://github.com/LatifahAbuhamamah/PHP-with-GET/blob/main/Screenshots/1.png)
 ![2](https://github.com/LatifahAbuhamamah/PHP-with-GET/blob/main/Screenshots/2.png)
 
 
-**Step 2: Store Data in Database (`store_data.php`)**
+## Step 2: Store Data in Database (`store_data.php`)
+
+
 This step involves receiving the data from the form submission and storing it in the database.
 
 ```php
@@ -163,11 +167,11 @@ if (isset($_GET['submit'])) {
 </body>
 </html>
 ```
-- The PHP script checks if the form has been submitted (isset($_GET['submit'])).
-- It retrieves the temperature and humidity values from the submitted form data using $_GET['temperature'] and $_GET['humidity'].
-- A database connection is established using mysqli_connect().
-- A SQL query is constructed to insert the data into the dht_sensor table.
-- The mysqli_query() function is used to execute the SQL query and store the data in the database.
+- The PHP script checks if the form has been submitted (`isset($_GET['submit']`).
+- It retrieves the temperature and humidity values from the submitted form data using `$_GET['temperature']` and `$_GET['humidity']`.
+- A database connection is established using `mysqli_connect()`.
+- A SQL query is constructed to insert the data into the `dht_sensor` table.
+- The `mysqli_query()` function is used to execute the SQL query and store the data in the database.
 
 ![3](https://github.com/LatifahAbuhamamah/PHP-with-GET/blob/main/Screenshots/3.png)
 ![4](https://github.com/LatifahAbuhamamah/PHP-with-GET/blob/main/Screenshots/4.png)
@@ -176,9 +180,10 @@ if (isset($_GET['submit'])) {
 
 
 
-**Step 3: Display Latest Data (`display_data.php`)**
+## Step 3: Display Latest Data (`display_data.php`) 
 
-Explanation: This step involves retrieving the latest data from the database and displaying it.
+
+This step involves retrieving the latest data from the database and displaying it.
 
 ```php
 <?php
@@ -274,11 +279,11 @@ while ($qry->fetch()) {
 
 ```
 
-- A database connection is established using mysqli_connect().
-- A prepared statement is used to retrieve the latest data from the dht_sensor table, ordered by ID in descending order (to get the most recent entry).
-- The data is fetched using bind_result() and stored in variables.
+- A database connection is established using `mysqli_connect()`.
+- A prepared statement is used to retrieve the latest data from the `dht_sensor` table, ordered by `ID` in descending order (to get the most recent entry).
+- The data is fetched using `bind_result()` and stored in variables.
 - On the web page, the latest temperature, humidity, and creation timestamp are displayed using appropriate HTML elements.
-- A link/button is provided to return to the data entry form (index.php)
+- A link/button is provided to return to the data entry form (`index.php`)
 
 ![5](https://github.com/LatifahAbuhamamah/PHP-with-GET/blob/main/Screenshots/5.png)
 
